@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tasyakuran Khitan Athallah</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Romanesco&family=Amiri&display=swap" rel="stylesheet">
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Amiri&family=Lobster&display=swap" rel="stylesheet">
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
@@ -16,9 +17,24 @@ body{
   background-image:url('https://www.transparenttextures.com/patterns/arabesque.png');
 }
 
-/* OVERLAY */
+/* ORNAMEN */
+.orn{
+  position:fixed;
+  width:90px;
+  height:90px;
+  opacity:.35;
+  z-index:1;
+}
+.orn.tl{top:10px;left:10px}
+.orn.tr{top:10px;right:10px;transform:rotate(90deg)}
+.orn.bl{bottom:10px;left:10px;transform:rotate(270deg)}
+.orn.br{bottom:10px;right:10px;transform:rotate(180deg)}
+
+/* LIGHT OVERLAY */
 .light-overlay{
-  position:fixed;inset:0;pointer-events:none;
+  position:fixed;
+  inset:0;
+  pointer-events:none;
   background:
     radial-gradient(circle at 20% 20%,rgba(255,255,255,.35),transparent 40%),
     radial-gradient(circle at 80% 80%,rgba(255,255,255,.25),transparent 45%);
@@ -45,7 +61,7 @@ body{
 .cover h1{color:#1b5e20;font-size:22px}
 .cover p{
   font-family:'Great Vibes',cursive;
-  font-size:24px;
+  font-size:26px;
   margin:12px 0 22px;
 }
 .open-btn{
@@ -74,19 +90,28 @@ section{
 .center{text-align:center}
 
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(30px);transition:1s}
-.reveal.active{opacity:1;transform:none}
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s;
+}
+.reveal.active{
+  opacity:1;
+  transform:none;
+}
 
 /* TEXT */
 .assalam{
   font-family:'Great Vibes',cursive;
-  font-size:32px;
+  font-size:34px;
   text-align:center;
   color:#1b5e20;
 }
+
+/* NAMA */
 .child-name{
-  font-family:'Romanesco',cursive;
-  font-size:36px;
+  font-family:'Lobster',cursive;
+  font-size:34px;
   color:#1b5e20;
   animation:glow 2.2s infinite;
 }
@@ -117,8 +142,13 @@ section{
   font-size:26px;
   text-align:center;
   direction:rtl;
+  line-height:1.9;
 }
-.ayat-id{text-align:center;font-size:14px;color:#555}
+.ayat-id{
+  text-align:center;
+  font-size:14px;
+  color:#555;
+}
 
 /* MAPS */
 .maps iframe{
@@ -140,8 +170,10 @@ section{
   color:#fff;
   border:none;
   font-size:22px;
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
 }
 
+/* FOOTER */
 footer{
   text-align:center;
   padding:36px 20px;
@@ -154,6 +186,13 @@ footer{
 
 <div class="light-overlay"></div>
 
+<!-- ORNAMEN -->
+<svg class="orn tl" viewBox="0 0 100 100"><path d="M50 5l15 15 20-5-5 20 15 15-15 15 5 20-20-5-15 15-15-15-20 5 5-20-15-15 15-15-5-20 20 5z" fill="#d4af37"/></svg>
+<svg class="orn tr" viewBox="0 0 100 100"><path d="M50 5l15 15 20-5-5 20 15 15-15 15 5 20-20-5-15 15-15-15-20 5 5-20-15-15 15-15-5-20 20 5z" fill="#d4af37"/></svg>
+<svg class="orn bl" viewBox="0 0 100 100"><path d="M50 5l15 15 20-5-5 20 15 15-15 15 5 20-20-5-15 15-15-15-20 5 5-20-15-15 15-15-5-20 20 5z" fill="#d4af37"/></svg>
+<svg class="orn br" viewBox="0 0 100 100"><path d="M50 5l15 15 20-5-5 20 15 15-15 15 5 20-20-5-15 15-15-15-20 5 5-20-15-15 15-15-5-20 20 5z" fill="#d4af37"/></svg>
+
+<!-- MUSIC -->
 <audio id="bgm" src="backsound.mp3" loop></audio>
 <button class="music-btn" id="musicBtn">▶</button>
 
@@ -167,25 +206,20 @@ footer{
 </div>
 
 <section id="undangan">
+
   <h2 class="assalam reveal">Assalamu’alaikum Wr. Wb.</h2>
 
-  <!-- KATA-KATA UNDANGAN -->
   <div class="card reveal">
     <p>
       Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta’ala,
-      kami bermaksud menyelenggarakan acara <strong>Tasyakuran Khitan</strong>
+      kami bermaksud menyelenggarakan acara <b>Tasyakuran Khitan</b>
       putra kami tercinta.
-    </p>
-    <p>
-      Merupakan suatu kehormatan dan kebahagiaan bagi kami,
-      apabila Bapak/Ibu/Saudara/i berkenan hadir
-      serta memberikan doa restu.
     </p>
   </div>
 
   <div class="card center reveal">
     <div class="photo-frame">
-      <img src="foto-athallah.png">
+      <img src="foto-athallah.png" alt="Athallah Kartico Wijaya">
     </div>
   </div>
 
@@ -200,14 +234,24 @@ footer{
     <p><b>Tempat</b> : Ballroom Hotel Aston Sidoarjo</p>
   </div>
 
+  <!-- PARAGRAF PINDAHAN -->
+  <div class="card reveal">
+    <p>
+      Merupakan suatu kehormatan dan kebahagiaan bagi kami,
+      apabila Bapak/Ibu/Saudara/i berkenan hadir
+      serta memberikan doa restu.
+    </p>
+  </div>
+
   <div class="card reveal">
     <div class="ayat-ar">رَبِّ اجْعَلْهُ مِنَ الصَّالِحِينَ</div>
     <div class="ayat-id"><em>“Ya Rabb, jadikanlah ia termasuk anak yang shalih.”</em></div>
   </div>
 
   <div class="card maps reveal">
-    <iframe src="https://www.google.com/maps?q=Hotel+Aston+Sidoarjo&output=embed"></iframe>
+    <iframe src="https://www.google.com/maps?q=Hotel+Aston+Sidoarjo&output=embed" loading="lazy"></iframe>
   </div>
+
 </section>
 
 <footer>
@@ -246,7 +290,8 @@ function rev(){
     }
   });
 }
-addEventListener("scroll",rev);rev();
+addEventListener("scroll",rev);
+rev();
 </script>
 
 </body>
