@@ -5,11 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tasyakuran Khitan Athallah</title>
 
-<!-- GOOGLE FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Amiri&family=Lobster&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 body{
   background:#f4f7f5;
   color:#333;
@@ -18,68 +17,50 @@ body{
 }
 
 /* ORNAMEN */
-.orn{
-  position:fixed;
-  width:90px;
-  height:90px;
-  opacity:.35;
-  z-index:1;
-}
+.orn{position:fixed;width:80px;height:80px;opacity:.3;z-index:1}
 .orn.tl{top:10px;left:10px}
 .orn.tr{top:10px;right:10px;transform:rotate(90deg)}
 .orn.bl{bottom:10px;left:10px;transform:rotate(270deg)}
 .orn.br{bottom:10px;right:10px;transform:rotate(180deg)}
 
-/* LIGHT */
-.light-overlay{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background:
-    radial-gradient(circle at 20% 20%,rgba(255,255,255,.35),transparent 40%),
-    radial-gradient(circle at 80% 80%,rgba(255,255,255,.25),transparent 45%);
-  z-index:0;
-}
-
-/* COVER */
 .cover{
   min-height:100vh;
   background:linear-gradient(180deg,#1b5e20,#e8f5e9);
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
   padding:24px;
 }
 .cover-box{
   background:#fff;
   padding:36px 26px;
   border-radius:22px;
+  text-align:center;
   max-width:420px;
   width:100%;
 }
-.cover h1{color:#1b5e20;font-size:22px}
-.cover p{
+.cover-box h1{color:#1b5e20;font-size:22px}
+.cover-box p{
   font-family:'Great Vibes',cursive;
   font-size:26px;
   margin:12px 0 22px;
 }
 .open-btn{
-  display:inline-block;
   padding:12px 30px;
   background:#2e7d32;
   color:#fff;
   border-radius:30px;
   text-decoration:none;
+  display:inline-block;
 }
 
-/* SECTION */
 section{
   max-width:720px;
   margin:auto;
   background:#fff;
   padding:50px 22px;
 }
+
 .card{
   background:#f9fdfb;
   padding:26px;
@@ -87,49 +68,33 @@ section{
   margin:26px 0;
   box-shadow:0 8px 22px rgba(0,0,0,.08);
 }
+
 .center{text-align:center}
 
-/* REVEAL */
-.reveal{
-  opacity:0;
-  transform:translateY(30px);
-  transition:1s;
-}
-.reveal.active{
-  opacity:1;
-  transform:none;
-}
-
-/* TEXT */
 .assalam{
   font-family:'Great Vibes',cursive;
   font-size:34px;
-  text-align:center;
   color:#1b5e20;
+  text-align:center;
 }
 
-/* NAMA */
+/* NAMA ANAK – SUDAH DIKECILKAN */
 .child-name{
   font-family:'Lobster',cursive;
-  font-size:34px;
+  font-size:26px;
   color:#1b5e20;
-  animation:glow 2.2s infinite;
   white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  text-align:center;
 }
-@keyframes glow{
-  0%,100%{opacity:.7}
-  50%{opacity:1;text-shadow:0 0 12px rgba(46,125,50,.35)}
-}
+
 @media(max-width:360px){
-  .child-name{font-size:30px}
+  .child-name{font-size:23px}
 }
 
 /* FOTO */
 .photo-frame{
-  width:220px;
-  height:220px;
+  width:210px;
+  height:210px;
   margin:0 auto;
   border-radius:50%;
   padding:8px;
@@ -145,10 +110,9 @@ section{
 /* AYAT */
 .ayat-ar{
   font-family:'Amiri',serif;
-  font-size:26px;
+  font-size:24px;
   text-align:center;
   direction:rtl;
-  line-height:1.9;
 }
 .ayat-id{
   text-align:center;
@@ -159,7 +123,7 @@ section{
 /* MAPS */
 .maps iframe{
   width:100%;
-  height:280px;
+  height:260px;
   border:0;
   border-radius:16px;
 }
@@ -176,33 +140,19 @@ section{
   color:#fff;
   border:none;
   font-size:22px;
-  box-shadow:0 4px 10px rgba(0,0,0,.2);
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:36px 20px;
-  color:#555;
 }
 </style>
 </head>
 
 <body>
 
-<div class="light-overlay"></div>
-
 <!-- ORNAMEN -->
 <svg class="orn tl" viewBox="0 0 100 100"><path d="M50 5l15 15 20-5-5 20 15 15-15 15 5 20-20-5-15 15-15-15-20 5 5-20-15-15 15-15-5-20 20 5z" fill="#d4af37"/></svg>
 <svg class="orn tr" viewBox="0 0 100 100"><path d="M50 5l15 15 20-5-5 20 15 15-15 15 5 20-20-5-15 15-15-15-20 5 5-20-15-15 15-15-5-20 20 5z" fill="#d4af37"/></svg>
-<svg class="orn bl" viewBox="0 0 100 100"><path d="M50 5l15 15 20-5-5 20 15 15-15 15 5 20-20-5-15 15-15-15-20 5 5-20-15-15 15-15-5-20 20 5z" fill="#d4af37"/></svg>
-<svg class="orn br" viewBox="0 0 100 100"><path d="M50 5l15 15 20-5-5 20 15 15-15 15 5 20-20-5-15 15-15-15-20 5 5-20-15-15 15-15-5-20 20 5z" fill="#d4af37"/></svg>
 
-<!-- MUSIC -->
 <audio id="bgm" src="backsound.mp3" loop></audio>
 <button class="music-btn" id="musicBtn">▶</button>
 
-<!-- COVER -->
 <div class="cover">
   <div class="cover-box">
     <h1>Tasyakuran Khitan</h1>
@@ -213,62 +163,60 @@ footer{
 
 <section id="undangan">
 
-  <h2 class="assalam reveal">Assalamu’alaikum Wr. Wb.</h2>
+<h2 class="assalam">Assalamu’alaikum Wr. Wb.</h2>
 
-  <div class="card reveal center">
-    <p>
-      Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta’ala,
-      kami bermaksud menyelenggarakan acara <b>Tasyakuran Khitan</b>
-      putra kami tercinta.
-    </p>
-  </div>
+<div class="card center">
+<p>
+Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta’ala,
+kami bermaksud menyelenggarakan acara <b>Tasyakuran Khitan</b>
+putra kami tercinta.
+</p>
+</div>
 
-  <div class="card center reveal">
-    <div class="photo-frame">
-      <img src="foto-athallah.png" alt="Athallah Kartico Wijaya">
-    </div>
+<div class="card center">
+  <div class="photo-frame">
+    <img src="foto-athallah.png">
   </div>
+</div>
 
-  <div class="card center reveal">
-    <div class="child-name">Athallah Kartico Wijaya</div>
-  </div>
+<div class="card center">
+  <div class="child-name">Athallah Kartico Wijaya</div>
+</div>
 
-  <div class="card reveal center">
-    <p><b>Hari</b> : Jumat</p>
-    <p><b>Tanggal</b> : 30 Januari 2026</p>
-    <p><b>Waktu</b> : 16.00 – 20.00 WIB</p>
-    <p><b>Tempat</b> : Ballroom Hotel Aston Sidoarjo</p>
-  </div>
+<div class="card center">
+<p><b>Hari</b> : Jumat</p>
+<p><b>Tanggal</b> : 30 Januari 2026</p>
+<p><b>Waktu</b> : 16.00 – 20.00 WIB</p>
+<p><b>Tempat</b> : Ballroom Hotel Aston Sidoarjo</p>
+</div>
 
-  <div class="card reveal center">
-    <p>
-      Merupakan suatu kehormatan dan kebahagiaan bagi kami,
-      apabila Bapak/Ibu/Saudara/i berkenan hadir
-      serta memberikan doa restu.
-    </p>
-  </div>
+<div class="card center">
+<p>
+Merupakan suatu kehormatan dan kebahagiaan bagi kami,
+apabila Bapak/Ibu/Saudara/i berkenan hadir
+serta memberikan doa restu.
+</p>
+</div>
 
-  <div class="card reveal">
-    <div class="ayat-ar">رَبِّ اجْعَلْهُ مِنَ الصَّالِحِينَ</div>
-    <div class="ayat-id"><em>“Ya Rabb, jadikanlah ia termasuk anak yang shalih.”</em></div>
-  </div>
+<div class="card">
+<div class="ayat-ar">رَبِّ اجْعَلْهُ مِنَ الصَّالِحِينَ</div>
+<div class="ayat-id">“Ya Rabb, jadikanlah ia termasuk anak yang shalih.”</div>
+</div>
 
-  <div class="card maps reveal center">
-    <iframe src="https://www.google.com/maps?q=Hotel+Aston+Sidoarjo&output=embed"></iframe>
-    <br><br>
-    <a href="https://maps.google.com/?q=Hotel+Aston+Sidoarjo"
-       target="_blank"
-       style="display:inline-block;padding:10px 22px;background:#2e7d32;color:#fff;border-radius:22px;text-decoration:none;font-size:14px;">
-       📍 Buka di Google Maps
-    </a>
-  </div>
+<div class="card maps center">
+<iframe src="https://www.google.com/maps?q=Hotel+Aston+Sidoarjo&output=embed"></iframe><br><br>
+<a href="https://maps.google.com/?q=Hotel+Aston+Sidoarjo" target="_blank"
+style="padding:10px 22px;background:#2e7d32;color:#fff;border-radius:22px;text-decoration:none;">
+📍 Buka di Google Maps
+</a>
+</div>
 
 </section>
 
-<footer>
-  <p>Hormat kami,</p>
-  <p><strong>Itong & Uyung</strong></p>
-  <p>Wassalamu’alaikum Wr. Wb.</p>
+<footer style="text-align:center;padding:36px">
+<p>Hormat kami,</p>
+<p><b>Itong & Uyung</b></p>
+<p>Wassalamu’alaikum Wr. Wb.</p>
 </footer>
 
 <script>
@@ -277,13 +225,8 @@ const btn=document.getElementById("musicBtn");
 let play=false;
 
 btn.onclick=()=>{
-  if(!play){
-    music.play();
-    btn.innerHTML="⏸";
-  }else{
-    music.pause();
-    btn.innerHTML="▶";
-  }
+  if(!play){music.play();btn.innerHTML="⏸";}
+  else{music.pause();btn.innerHTML="▶";}
   play=!play;
 };
 
@@ -292,17 +235,6 @@ document.querySelector(".open-btn").onclick=()=>{
   btn.innerHTML="⏸";
   play=true;
 };
-
-const r=document.querySelectorAll(".reveal");
-function rev(){
-  r.forEach(e=>{
-    if(e.getBoundingClientRect().top<innerHeight-80){
-      e.classList.add("active");
-    }
-  });
-}
-addEventListener("scroll",rev);
-rev();
 </script>
 
 </body>
