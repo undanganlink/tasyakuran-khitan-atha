@@ -1,111 +1,208 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tasyakuran Khitan Athallah</title>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif;}
-    body{background:#f4f7f5;color:#333;line-height:1.6;background-image:url('https://www.transparenttextures.com/patterns/arabesque.png');}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tasyakuran Khitan Athallah</title>
 
-    /* COVER */
-    .cover{min-height:100vh;background:linear-gradient(180deg,#1b5e20,#e8f5e9);display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;}
-    .cover-box{background:#ffffffee;padding:32px 24px;border-radius:20px;max-width:420px;width:100%;animation:fadeIn 1.2s ease;}
-    .cover h1{font-size:22px;color:#1b5e20;margin-bottom:8px;}
-    .cover p{font-size:14px;margin-bottom:20px;}
-    .open-btn{display:inline-block;padding:12px 28px;background:#2e7d32;color:#fff;border-radius:30px;text-decoration:none;font-size:15px;font-weight:500;}
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Romanesco&family=Amiri&display=swap" rel="stylesheet">
 
-    section{padding:40px 20px;max-width:720px;margin:auto;background:#fff;}
-    h2{color:#1b5e20;margin-bottom:12px;text-align:center;}
-    .card{background:#f9fdfb;padding:24px;border-radius:18px;margin:20px 0;}
-    .center{text-align:center;}
-    .detail p{margin:6px 0;}
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif}
+body{
+  background:#f4f7f5;
+  color:#333;
+  line-height:1.6;
+  background-image:url('https://www.transparenttextures.com/patterns/arabesque.png');
+}
 
-    /* MUSIC BUTTON */
-    .music-btn{position:fixed;bottom:20px;right:20px;background:#2e7d32;color:#fff;border:none;border-radius:50%;width:52px;height:52px;font-size:22px;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,.2);}
+/* ORNAMEN */
+.orn{position:fixed;width:90px;height:90px;opacity:.35;z-index:1}
+.orn.tl{top:10px;left:10px}
+.orn.tr{top:10px;right:10px;transform:rotate(90deg)}
+.orn.bl{bottom:10px;left:10px;transform:rotate(270deg)}
+.orn.br{bottom:10px;right:10px;transform:rotate(180deg)}
 
-    .maps iframe{width:100%;height:300px;border:0;border-radius:16px;}
+/* LIGHT */
+.light-overlay{
+  position:fixed;inset:0;pointer-events:none;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,.35),transparent 40%),
+    radial-gradient(circle at 80% 80%,rgba(255,255,255,.25),transparent 45%);
+  z-index:0;
+}
 
-    footer{text-align:center;padding:32px 20px 40px;color:#555;font-size:14px;}
+/* COVER */
+.cover{
+  min-height:100vh;
+  background:linear-gradient(180deg,#1b5e20,#e8f5e9);
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:24px;
+}
+.cover-box{
+  background:#ffffffee;
+  padding:36px 26px;
+  border-radius:22px;
+  max-width:420px;width:100%;
+  animation:fadeIn 1.2s ease;
+}
+.cover h1{color:#1b5e20;font-size:22px}
+.cover p{font-family:'Great Vibes',cursive;font-size:22px;margin:12px 0 22px}
+.open-btn{
+  display:inline-block;padding:12px 30px;
+  background:#2e7d32;color:#fff;
+  border-radius:30px;text-decoration:none;
+  transition:.3s
+}
+.open-btn:hover{transform:scale(1.05);background:#1b5e20}
 
-    @keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
-  </style>
+/* SECTION */
+section{padding:56px 22px;max-width:720px;margin:auto;background:#fff}
+.card{
+  background:#f9fdfb;
+  padding:26px;border-radius:20px;
+  margin:26px 0;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+}
+.center{text-align:center}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:1s}
+.reveal.active{opacity:1;transform:none}
+
+/* ASSALAM */
+.assalam{
+  font-family:'Great Vibes',cursive;
+  font-size:32px;text-align:center;color:#1b5e20
+}
+
+/* NAMA */
+.child-name{
+  font-family:'Romanesco',cursive;
+  font-size:36px;color:#1b5e20;
+  animation:fadeGlow 2.2s ease-in-out infinite
+}
+@keyframes fadeGlow{
+  0%{opacity:.7;text-shadow:0 0 0 rgba(46,125,50,0)}
+  50%{opacity:1;text-shadow:0 0 12px rgba(46,125,50,.35)}
+  100%{opacity:.7;text-shadow:0 0 0 rgba(46,125,50,0)}
+}
+
+/* FOTO */
+.photo-frame{
+  width:220px;height:220px;margin:0 auto;
+  border-radius:50%;padding:8px;
+  background:linear-gradient(135deg,#d4af37,#f5e6a8);
+  box-shadow:0 10px 25px rgba(0,0,0,.18)
+}
+.photo-frame img{
+  width:100%;height:100%;object-fit:cover;
+  border-radius:50%;
+  box-shadow:inset 0 0 0 4px #fff
+}
+
+/* AYAT */
+.ayat-ar{
+  font-family:'Amiri',serif;
+  font-size:26px;text-align:center;
+  direction:rtl;line-height:1.9
+}
+.ayat-id{text-align:center;font-size:14px;color:#555}
+
+/* MAPS */
+.maps iframe{width:100%;height:300px;border:0;border-radius:16px}
+
+/* MUSIC */
+.music-btn{
+  position:fixed;bottom:20px;right:20px;
+  width:52px;height:52px;border-radius:50%;
+  background:#2e7d32;color:#fff;
+  border:none;font-size:22px;
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
+  animation:float 3s ease-in-out infinite;
+}
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+  100%{transform:translateY(0)}
+}
+
+footer{text-align:center;padding:36px 20px;color:#555}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1}}
+</style>
 </head>
+
 <body>
 
-  <!-- BACKSOUND -->
-  <audio id="bgm" src="backsound.mp3" loop></audio>
+<div class="light-overlay"></div>
 
-  <!-- MUSIC BUTTON -->
-  <button class="music-btn" id="musicBtn">▶</button>
+<!-- ORNAMEN -->
+<svg class="orn tl" viewBox="0 0 100 100"><path d="M50 5l15 15 20-5-5 20 15 15-15 15 5 20-20-5-15 15-15-15-20 5 5-20-15-15 15-15-5-20 20 5z" fill="#d4af37"/></svg>
+<svg class="orn tr" viewBox="0 0 100 100"><path d="M50 5l15 15 20-5-5 20 15 15-15 15 5 20-20-5-15 15-15-15-20 5 5-20-15-15 15-15-5-20 20 5z" fill="#d4af37"/></svg>
+<svg class="orn bl" viewBox="0 0 100 100"><path d="M50 5l15 15 20-5-5 20 15 15-15 15 5 20-20-5-15 15-15-15-20 5 5-20-15-15 15-15-5-20 20 5z" fill="#d4af37"/></svg>
+<svg class="orn br" viewBox="0 0 100 100"><path d="M50 5l15 15 20-5-5 20 15 15-15 15 5 20-20-5-15 15-15-15-20 5 5-20-15-15 15-15-5-20 20 5z" fill="#d4af37"/></svg>
 
-  <!-- COVER -->
-  <div class="cover">
-    <div class="cover-box">
-      <h1>Tasyakuran Khitan</h1>
-      <p>Athallah Kartico Wijaya</p>
-      <a href="#undangan" class="open-btn">Buka Undangan</a>
+<audio id="bgm" src="backsound.mp3" loop></audio>
+<button class="music-btn" id="musicBtn">▶</button>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-box">
+    <h1>Tasyakuran Khitan</h1>
+    <p>Athallah Kartico Wijaya</p>
+    <a href="#undangan" class="open-btn">Buka Undangan</a>
+  </div>
+</div>
+
+<section id="undangan">
+  <h2 class="assalam reveal">Assalamu’alaikum Wr. Wb.</h2>
+
+  <div class="card center reveal">
+    <div class="photo-frame">
+      <img src="foto-athallah.png">
     </div>
   </div>
 
-  <!-- ISI UNDANGAN -->
-  <section id="undangan">
-    <!-- FOTO -->
-    <div class="card center">
-      <img src="foto-athallah.png" alt="Athallah Kartico Wijaya" style="max-width:100%;border-radius:16px;">
-      <p style="font-size:13px;color:#666;margin-top:8px;">Athallah Kartico Wijaya</p>
-    </div>
-    <h2>Assalamu’alaikum Wr. Wb.</h2>
-    <p class="center">Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara tasyakuran khitan putra kami:</p>
+  <div class="card center reveal">
+    <div class="child-name">Athallah Kartico Wijaya</div>
+  </div>
 
-    <div class="card center">
-      <h2>Athallah Kartico Wijaya</h2>
-    </div>
+  <div class="card reveal">
+    <p><strong>Hari</strong> : Jumat</p>
+    <p><strong>Tanggal</strong> : 30 Januari 2026</p>
+    <p><strong>Waktu</strong> : 16.00 – 20.00 WIB</p>
+    <p><strong>Tempat</strong> : Ballroom Hotel Aston Sidoarjo</p>
+  </div>
 
-    <div class="card detail">
-      <p><strong>Hari</strong> : Jumat</p>
-      <p><strong>Tanggal</strong> : 30 Januari 2026</p>
-      <p><strong>Waktu</strong> : 16.00 – 20.00 WIB</p>
-      <p><strong>Tempat</strong> : Ballroom Hotel Aston Sidoarjo</p>
-    </div>
+  <div class="card reveal">
+    <div class="ayat-ar">رَبِّ اجْعَلْهُ مِنَ الصَّالِحِينَ</div>
+    <div class="ayat-id"><em>“Ya Rabb, jadikanlah ia termasuk anak yang shalih.”</em></div>
+  </div>
 
-    <div class="card">
-      <p class="center"><em>“Semoga Ananda Athallah tumbuh menjadi anak yang sholeh, sehat, berbakti kepada orang tua, serta berguna bagi agama dan bangsa.”</em></p>
-    </div>
-  </section>
+  <div class="card maps reveal">
+    <iframe src="https://www.google.com/maps?q=Hotel+Aston+Sidoarjo&output=embed" loading="lazy"></iframe>
+  </div>
+</section>
 
-      <div class="card maps">
-      <h2>Lokasi Acara</h2>
-      <iframe src="https://www.google.com/maps?q=Hotel+Aston+Sidoarjo&output=embed" loading="lazy"></iframe>
-    </div>
+<footer>
+  <p>Hormat kami,</p>
+  <p><strong>Itong & Uyung</strong></p>
+  <p>Wassalamu’alaikum Wr. Wb.</p>
+</footer>
 
-  </section>
+<script>
+/* MUSIC */
+const music=document.getElementById('bgm');
+const btn=document.getElementById('musicBtn');
+let play=false;
+btn.onclick=()=>{play?music.pause():music.play();btn.innerHTML=play?'▶':'⏸';play=!play}
 
-  <!-- BACKSOUND -->
-  <audio src="backsound.mp3" autoplay loop></audio>
-
-  <footer>
-    <p>Hormat kami,</p>
-    <p><strong>Itong & Uyung</strong></p>
-    <p>Wassalamu’alaikum Wr. Wb.</p>
-  </footer>
-
-  <script>
-    const music = document.getElementById('bgm');
-    const btn = document.getElementById('musicBtn');
-    let playing = false;
-
-    btn.addEventListener('click', function(){
-      if(!playing){
-        music.play();
-        btn.innerHTML = '⏸';
-      }else{
-        music.pause();
-        btn.innerHTML = '▶';
-      }
-      playing = !playing;
-    });
-  </script>
+/* REVEAL */
+const r=document.querySelectorAll('.reveal');
+function rev(){r.forEach(e=>{if(e.getBoundingClientRect().top<innerHeight-80)e.classList.add('active')})}
+addEventListener('scroll',rev);rev();
+</script>
 
 </body>
 </html>
