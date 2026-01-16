@@ -30,7 +30,7 @@ body{
 .orn.bl{bottom:10px;left:10px;transform:rotate(270deg)}
 .orn.br{bottom:10px;right:10px;transform:rotate(180deg)}
 
-/* LIGHT OVERLAY */
+/* LIGHT */
 .light-overlay{
   position:fixed;
   inset:0;
@@ -46,8 +46,8 @@ body{
   min-height:100vh;
   background:linear-gradient(180deg,#1b5e20,#e8f5e9);
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   text-align:center;
   padding:24px;
 }
@@ -114,10 +114,16 @@ section{
   font-size:34px;
   color:#1b5e20;
   animation:glow 2.2s infinite;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 @keyframes glow{
   0%,100%{opacity:.7}
   50%{opacity:1;text-shadow:0 0 12px rgba(46,125,50,.35)}
+}
+@media(max-width:360px){
+  .child-name{font-size:30px}
 }
 
 /* FOTO */
@@ -209,7 +215,7 @@ footer{
 
   <h2 class="assalam reveal">Assalamu’alaikum Wr. Wb.</h2>
 
-  <div class="card reveal">
+  <div class="card reveal center">
     <p>
       Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta’ala,
       kami bermaksud menyelenggarakan acara <b>Tasyakuran Khitan</b>
@@ -227,15 +233,14 @@ footer{
     <div class="child-name">Athallah Kartico Wijaya</div>
   </div>
 
-  <div class="card reveal">
+  <div class="card reveal center">
     <p><b>Hari</b> : Jumat</p>
     <p><b>Tanggal</b> : 30 Januari 2026</p>
     <p><b>Waktu</b> : 16.00 – 20.00 WIB</p>
     <p><b>Tempat</b> : Ballroom Hotel Aston Sidoarjo</p>
   </div>
 
-  <!-- PARAGRAF PINDAHAN -->
-  <div class="card reveal">
+  <div class="card reveal center">
     <p>
       Merupakan suatu kehormatan dan kebahagiaan bagi kami,
       apabila Bapak/Ibu/Saudara/i berkenan hadir
@@ -248,8 +253,14 @@ footer{
     <div class="ayat-id"><em>“Ya Rabb, jadikanlah ia termasuk anak yang shalih.”</em></div>
   </div>
 
-  <div class="card maps reveal">
-    <iframe src="https://www.google.com/maps?q=Hotel+Aston+Sidoarjo&output=embed" loading="lazy"></iframe>
+  <div class="card maps reveal center">
+    <iframe src="https://www.google.com/maps?q=Hotel+Aston+Sidoarjo&output=embed"></iframe>
+    <br><br>
+    <a href="https://maps.google.com/?q=Hotel+Aston+Sidoarjo"
+       target="_blank"
+       style="display:inline-block;padding:10px 22px;background:#2e7d32;color:#fff;border-radius:22px;text-decoration:none;font-size:14px;">
+       📍 Buka di Google Maps
+    </a>
   </div>
 
 </section>
