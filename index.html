@@ -3,236 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tasyakuran Khitan | Athallah Kartico Wijaya</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <title>Tasyakuran Khitan Athallah</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, #e3f2e9 0%, #ffffff 65%),
-                  url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><g fill="none" stroke="%232e7d32" stroke-opacity="0.08"><polygon points="60,10 110,60 60,110 10,60"/></g></svg>');
-      background-attachment: fixed;
-      color: #333;
-      line-height: 1.6;
+    *{box-sizing:border-box;margin:0;padding:0;font-family: 'Segoe UI', sans-serif;}
+    body{background:#f4f7f5;color:#333;line-height:1.6;}
+
+    /* COVER */
+    .cover{
+      min-height:100vh;
+      background:linear-gradient(180deg,#1b5e20,#e8f5e9);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:24px;
     }
-    .container {
-      max-width: 600px;
-      margin: auto;
-      padding: 24px;
-      text-align: center;
+    .cover-box{
+      background:#ffffffee;
+      padding:32px 24px;
+      border-radius:20px;
+      max-width:420px;
+      width:100%;
+      animation:fadeIn 1.2s ease;
     }
-    .card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 32px 24px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    .cover h1{font-size:22px;color:#1b5e20;margin-bottom:8px;}
+    .cover p{font-size:14px;margin-bottom:20px;}
+    .open-btn{
+      display:inline-block;
+      padding:12px 28px;
+      background:#2e7d32;
+      color:#fff;
+      border-radius:30px;
+      text-decoration:none;
+      font-size:15px;
+      font-weight:500;
     }
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      margin-bottom: 6px;
+
+    /* ISI */
+    section{
+      padding:40px 20px;
+      max-width:700px;
+      margin:auto;
+      background:#fff;
     }
-    h2 {
-      font-size: 22px;
-      margin: 16px 0 8px;
-      font-weight: 600;
+    h2{color:#1b5e20;margin-bottom:12px;text-align:center;}
+    .card{
+      background:#f9fdfb;
+      padding:24px;
+      border-radius:18px;
+      margin:20px 0;
     }
-    .subtitle {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 20px;
+    .center{text-align:center;}
+    .detail p{margin:6px 0;}
+
+    footer{
+      text-align:center;
+      padding:32px 20px 40px;
+      color:#555;
+      font-size:14px;
     }
-    .arabic {
-      font-size: 20px;
-      margin-bottom: 12px;
-      color: #1b5e20;
-    }
-    .divider {
-      width: 60px;
-      height: 3px;
-      background: #2e7d32;
-      margin: 16px auto 24px;
-      border-radius: 3px;
-    }
-    .info {
-      text-align: left;
-      margin: 0 auto 24px;
-      max-width: 420px;
-      font-size: 15px;
-    }
-    .info p { margin-bottom: 10px; }
-    .label {
-      font-weight: 600;
-      display: inline-block;
-      width: 80px;
-    }
-    .btn {
-      display: block;
-      margin: 12px auto 0;
-      padding: 12px 24px;
-      background: #2e7d32;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: 500;
-      transition: 0.3s;
-      width: fit-content;
-    }
-    .btn:hover { background: #1b5e20; }
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin: 24px 0;
-    }
-    .time-box {
-      background: #e8f5e9;
-      padding: 12px 10px;
-      border-radius: 12px;
-      min-width: 60px;
-    }
-    .time-box h3 { font-size: 18px; color: #2e7d32; }
-    .time-box span { font-size: 12px; color: #555; }
-    .footer {
-      margin-top: 32px;
-      font-size: 14px;
-      color: #555;
-    }
-    .parents {
-      margin-top: 8px;
-      font-weight: 600;
-    }
-  @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}
     }
   </style>
 </head>
 <body>
-<div id="cover" style="position:fixed;inset:0;background:linear-gradient(180deg,#1b5e20,#e8f5e9);display:flex;align-items:center;justify-content:center;z-index:9999;text-align:center;padding:24px;pointer-events:auto;">
-  <div style="background:#fff;border-radius:24px;padding:32px 24px;max-width:420px;width:100%;box-shadow:0 20px 40px rgba(0,0,0,0.25);animation:fadeUp 1.2s ease;">
-    <div style="font-size:18px;color:#1b5e20;margin-bottom:8px;">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
-    <h1 style="font-family:'Playfair Display',serif;font-size:26px;margin-bottom:8px;">Tasyakuran Khitan</h1>
-    <p style="font-size:14px;color:#555;margin-bottom:16px;">Athallah Kartico Wijaya</p>
-    <button id="openBtn" type="button" style="padding:12px 28px;border:none;border-radius:30px;background:#2e7d32;color:#fff;font-size:15px;font-weight:500;cursor:pointer;pointer-events:auto;">Buka Undangan</button>
-  </div>
-</div>
-  <audio id="bg-music" loop>
-    <source src="https://cdn.pixabay.com/audio/2022/10/13/audio_9c5c2d5c2a.mp3" type="audio/mpeg">
-  </audio>
 
-  <div style="text-align:center;margin:12px 0;font-size:13px;color:#2e7d32;">Ketuk layar untuk memulai musik</div>
-  <div class="container" id="content" style="display:none;">
-    <div class="card" style="animation: fadeUp 1.2s ease;">
-      <img src="athallah.png" alt="Athallah Kartico Wijaya" style="width:160px;height:160px;object-fit:cover;border-radius:50%;margin:0 auto 16px;display:block;box-shadow:0 8px 20px rgba(0,0,0,0.15);" />
-      <div style="font-size:18px;color:#1b5e20;margin-bottom:8px;">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
-      <div style="font-size:14px;color:#2e7d32;margin-bottom:16px;">Assalamu’alaikum Warahmatullahi Wabarakatuh</div>
-      <div class="arabic">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-box">
       <h1>Tasyakuran Khitan</h1>
-      <div class="divider"></div>
-      <h2>Athallah Kartico Wijaya</h2>
-      <p style="font-size:14px;color:#1b5e20;margin-top:8px;">﴿ رَبِّ زِدْنِي عِلْمًا وَصِحَّةً وَعَافِيَةً ﴾</p>
-      <p style="font-size:13px;color:#555;margin-bottom:16px;">"Ya Allah, tambahkanlah ilmu, kesehatan, dan keselamatan kepadanya."</p>
-      <p class="subtitle">Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara tasyakuran khitan putra kami.</p>
-
-      <div class="countdown" id="countdown"></div>
-
-      <div class="info">
-        <p><span class="label">Hari</span>: Jumat</p>
-        <p><span class="label">Tanggal</span>: 30 Januari 2026</p>
-        <p><span class="label">Waktu</span>: 16.00 – 20.00 WIB</p>
-        <p><span class="label">Tempat</span>: Ballroom Hotel Aston Sidoarjo</p>
-      </div>
-
-      <a class="btn" href="https://maps.app.goo.gl/3pPp4LJk3p7xq3gH8" target="_blank">📍 Lihat Lokasi (Google Maps)</a>
-      
-
-      <div class="footer">
-        <div style="margin:32px 0 16px;padding:16px;border-radius:16px;background:#f1f8f4;animation:fadeUp 1.4s ease;">
-          <div style="font-size:15px;font-weight:600;color:#1b5e20;margin-bottom:6px;">Doa & Harapan</div>
-          <p style="font-size:14px;color:#555;">Semoga Athallah Kartico Wijaya tumbuh menjadi anak yang sholeh, sehat, berbakti kepada orang tua, serta berguna bagi agama, bangsa, dan negara.</p>
-        </div>
-        <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
-        <div class="parents">Itong & Uyung</div>
-      </div>
+      <p>Athallah Kartico Wijaya</p>
+      <a href="#undangan" class="open-btn">Buka Undangan</a>
     </div>
   </div>
 
-<script>
-  // fungsi buka undangan (fix total)
-  function openInvitation(){
-    const cover = document.getElementById('cover');
-    const content = document.getElementById('content');
-    if(cover){ cover.style.opacity = '0'; setTimeout(()=>{ cover.style.display='none'; },300); }
-    if(content){ content.style.display='block'; }
-    const music = document.getElementById('bg-music');
-    if(music){ music.muted = false; music.play().catch(()=>{}); }
-  }
+  <!-- ISI UNDANGAN -->
+  <section id="undangan">
+    <h2>Assalamu’alaikum Wr. Wb.</h2>
+    <p class="center">Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara tasyakuran khitan putra kami:</p>
 
-  // pastikan tombol bisa diklik di semua browser
-  window.addEventListener('load', function(){
-    const btn = document.getElementById('openBtn');
-    if(btn){
-      btn.addEventListener('touchstart', openInvitation);
-      btn.addEventListener('click', openInvitation);
-    }
-  });(){
-    const cover = document.getElementById('cover');
-    const content = document.getElementById('content');
-    if(cover) cover.style.display = 'none';
-    if(content) content.style.display = 'block';
-    const music = document.getElementById('bg-music');
-    if(music){ music.play().catch(()=>{}); }
-  }
+    <div class="card center">
+      <h2>Athallah Kartico Wijaya</h2>
+    </div>
 
-  // fallback jika onclick tidak jalan di beberapa browser
-  document.addEventListener('DOMContentLoaded', function(){
-    const btn = document.getElementById('openBtn');
-    if(btn){
-      btn.addEventListener('click', openInvitation);
-    }
-  });(){
-    document.getElementById('cover').style.display='none';
-    document.getElementById('content').style.display='block';
-    const music=document.getElementById('bg-music');
-    if(music) music.play().catch(()=>{});
-  }
+    <div class="card detail">
+      <p><strong>Hari</strong> : Jumat</p>
+      <p><strong>Tanggal</strong> : 30 Januari 2026</p>
+      <p><strong>Waktu</strong> : 16.00 – 20.00 WIB</p>
+      <p><strong>Tempat</strong> : Ballroom Hotel Aston Sidoarjo</p>
+    </div>
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const music = document.getElementById('bg-music');
-    const playMusic = () => {
-      music.play().catch(()=>{});
-      document.removeEventListener('click', playMusic);
-    };
-    document.addEventListener('click', playMusic);
-  });
-    if (music.paused) music.play();
-  });
+    <div class="card">
+      <p class="center"><em>“Semoga Ananda Athallah tumbuh menjadi anak yang sholeh, sehat, berbakti kepada orang tua, serta berguna bagi agama dan bangsa.”</em></p>
+    </div>
+  </section>
 
-  const targetDate = new Date('2026-01-30T16:00:00').getTime();
-  const countdownEl = document.getElementById('countdown');
+  <footer>
+    <p>Hormat kami,</p>
+    <p><strong>Itong & Uyung</strong></p>
+    <p>Wassalamu’alaikum Wr. Wb.</p>
+  </footer>
 
-  setInterval(() => {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    if (distance < 0) {
-      countdownEl.innerHTML = '<p>Acara sedang berlangsung</p>';
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    countdownEl.innerHTML = `
-      <div class="time-box"><h3>${days}</h3><span>Hari</span></div>
-      <div class="time-box"><h3>${hours}</h3><span>Jam</span></div>
-      <div class="time-box"><h3>${minutes}</h3><span>Menit</span></div>
-      <div class="time-box"><h3>${seconds}</h3><span>Detik</span></div>
-    `;
-  }, 1000);
-</script>
 </body>
 </html>
