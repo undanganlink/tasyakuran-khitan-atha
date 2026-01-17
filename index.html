@@ -59,8 +59,9 @@
             100% { transform: scale(1); }
         }
 
-        /* CONTENT */
-        .section { padding: 80px 25px; text-align: center; position: relative; }
+        /* CONTENT STYLES */
+        .section { padding: 60px 20px; text-align: center; position: relative; }
+        
         .photo-container {
             width: 220px; height: 220px; margin: 30px auto;
             border-radius: 20px; overflow: hidden;
@@ -71,6 +72,7 @@
         .doa-box {
             background: white; max-width: 600px; margin: 20px auto;
             padding: 30px 20px; border-radius: 15px; border: 1px solid #f0e6d2;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         .arabic {
             font-family: 'Amiri', serif; font-size: 1.8rem;
@@ -87,29 +89,32 @@
         .countdown-item {
             background: var(--dark-green); color: white;
             padding: 10px; border-radius: 10px; min-width: 65px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
         .countdown-item span { display: block; font-size: 1.5rem; font-weight: bold; color: var(--gold); }
         .countdown-item small { font-size: 0.7rem; text-transform: uppercase; }
 
-        /* MAP BOX FIXED */
+        /* MAP WRAPPER FIXED */
         .map-wrapper {
             border-radius: 15px; overflow: hidden; margin: 25px auto;
             border: 2px solid var(--gold); height: 350px; max-width: 600px;
-            background: #f0f0f0;
+            background-color: #eee; /* Placeholder color */
         }
 
         .btn-map {
-            display: inline-block; margin-top: 10px; padding: 12px 30px;
+            display: inline-block; margin-top: 15px; padding: 12px 30px;
             background-color: var(--dark-green); color: white;
             text-decoration: none; border-radius: 5px; font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: background 0.3s;
         }
+        .btn-map:hover { background-color: #043016; }
 
         #music-control {
             position: fixed; bottom: 20px; right: 20px; z-index: 9000;
             background: var(--gold); width: 45px; height: 45px;
             border-radius: 50%; display: flex; justify-content: center;
             align-items: center; color: white; cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -134,7 +139,7 @@
 
     <div id="main">
         <section class="section">
-            <div data-aos="fade-up">
+            <div data-aos="fade-up" data-aos-duration="1000">
                 <div class="arabic" style="font-size: 2.2rem; margin-bottom: 20px;">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
                 <p><i>Assalamu’alaikum Warahmatullahi Wabarakatuh</i></p>
                 <p style="max-width: 600px; margin: 20px auto;">
@@ -142,28 +147,28 @@
                 </p>
             </div>
 
-            <div class="photo-container" data-aos="zoom-in" data-aos-delay="200">
+            <div class="photo-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
                 <img src="foto-athallah.png" alt="Athallah" class="child-photo" onerror="this.src='https://via.placeholder.com/300?text=Athallah'">
             </div>
 
-            <div data-aos="fade-up" data-aos-delay="400">
+            <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                 <h1 class="script-font">Athallah Kartico Wijaya</h1>
                 <p>Putra dari Bapak <b>Samsul</b> & Ibu <b>Uyung</b></p>
             </div>
         </section>
 
         <section class="section" style="padding-top: 0;">
-            <div class="doa-box" data-aos="fade-up">
+            <div class="doa-box" data-aos="fade-up" data-aos-duration="1000">
                 <div class="arabic">رَبِّ هَبْ لِي مِنَ الصَّالِحِينَ</div>
                 <p><i>"Ya Tuhanku, anugerahkanlah kepadaku (seorang anak) yang termasuk orang-orang yang shaleh." (QS. Ash-Shaffat: 100)</i></p>
                 <hr style="width: 30%; margin: 20px auto; border: 0.5px solid var(--gold);">
-                <div class="arabic">اَللَّهُمَّ اجْعَلْلهُ بَرًّا بِوَالِدَيْهِ وَمُبَارَكًا لِلْإِسْلَامِ</div>
+                <div class="arabic">اَللَّهُمَّ اجْعَلْهُ بَرًّا بِوَالِدَيْهِ وَمُبَارَكًا لِلْإِسْلَامِ</div>
                 <p><i>"Ya Allah, jadikanlah ia anak yang berbakti kepada kedua orang tuanya dan membawa keberkahan bagi umat Islam."</i></p>
             </div>
         </section>
 
         <section class="section" style="background: #fbf8f2;">
-            <div data-aos="fade-down">
+            <div data-aos="fade-down" data-aos-duration="1000">
                 <h2 class="title">WAKTU & TEMPAT</h2>
                 <div style="margin: 20px 0;">
                     <p>Insya Allah akan dilaksanakan pada:</p>
@@ -172,38 +177,46 @@
                 </div>
             </div>
 
-            <div class="countdown-container" id="countdown" data-aos="zoom-in">
+            <div class="countdown-container" id="countdown" data-aos="zoom-in" data-aos-duration="1000">
                 <div class="countdown-item"><span id="days">0</span><small>Hari</small></div>
                 <div class="countdown-item"><span id="hours">0</span><small>Jam</small></div>
                 <div class="countdown-item"><span id="minutes">0</span><small>Menit</small></div>
                 <div class="countdown-item"><span id="seconds">0</span><small>Detik</small></div>
             </div>
 
-            <div data-aos="fade-up">
+            <div data-aos="fade-up" data-aos-duration="1000">
                 <p><b>Bertempat di:</b></p>
                 <p style="font-size: 1.1rem; font-weight: bold;">Ballroom Hotel Aston Sidoarjo</p>
                 <p style="font-size: 0.85rem; color: #666;">Jl. Kahuripan Raya No.14, Entalsewu, Sidoarjo</p>
             </div>
 
-            <div class="map-wrapper" data-aos="flip-up">
+            <div class="map-wrapper" data-aos="flip-up" data-aos-duration="1000">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.124578536341!2d112.69348937482862!3d-7.451458892559779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e158632032e3%3A0x8dd46af575404565!2sASTON%20Sidoarjo%20City%20Hotel%20%26%20Conference%20Center!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    marginheight="0" 
+                    marginwidth="0" 
+                    src="https://maps.google.com/maps?q=Aston+Sidoarjo+City+Hotel+%26+Conference+Center&t=&z=15&ie=UTF8&iwloc=&output=embed">
+                </iframe>
             </div>
             
-            <div data-aos="fade-up">
-                <a href="https://maps.app.goo.gl/9uE6jLpS4Y5T9XfW9" target="_blank" class="btn-map">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <a href="https://maps.google.com/maps?q=Aston+Sidoarjo+City+Hotel" target="_blank" class="btn-map">
                     <i class="fas fa-map-marker-alt"></i> BUKA PETA NAVIGASI
                 </a>
             </div>
         </section>
 
-        <section class="section" data-aos="fade-up">
-            <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada putra kami.</p>
-            <p style="margin-top: 20px;">Atas kehadiran dan doa restunya kami ucapkan terima kasih.</p>
-            <p style="margin-top: 30px;"><i>Wassalamu’alaikum Warahmatullahi Wabarakatuh</i></p>
+        <section class="section">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada putra kami.</p>
+                <p style="margin-top: 20px;">Atas kehadiran dan doa restunya kami ucapkan terima kasih.</p>
+                <p style="margin-top: 30px;"><i>Wassalamu’alaikum Warahmatullahi Wabarakatuh</i></p>
+            </div>
             
-            <div style="margin-top: 60px;" data-aos="zoom-in">
+            <div style="margin-top: 60px;" data-aos="zoom-in" data-aos-duration="1000">
                 <p>Hormat kami,</p>
                 <h2 class="script-font" style="font-size: 2.5rem;">Samsul & Uyung</h2>
                 <p>(Keluarga Besar Athallah Kartico Wijaya)</p>
@@ -217,39 +230,53 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Inisialisasi AOS dengan pengaturan paksa
+        // Inisialisasi AOS
         AOS.init({
-            duration: 1000,
-            once: false,
-            mirror: true,
-            offset: 120
+            once: false, // Animasi bisa berulang saat scroll naik turun
+            mirror: true
         });
 
-        // COUNTDOWN
+        // COUNTDOWN LOGIC
         const targetDate = new Date("Jan 30, 2026 16:00:00").getTime();
-        setInterval(() => {
+        
+        function updateCountdown() {
             const now = new Date().getTime();
             const distance = targetDate - now;
-            if (distance > 0) {
-                document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-                document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
-            }
-        }, 1000);
 
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "<p>Acara Telah Selesai</p>";
+                return;
+            }
+
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Run immediately
+
+        // OPEN INVITATION
         function openInvitation() {
             document.getElementById('cover').classList.add('hidden');
-            document.getElementById('backsound').play().catch(e => console.log("Music play blocked"));
-            // Refresh AOS saat buka undangan agar animasi langsung jalan
-            setTimeout(() => { AOS.refresh(); }, 600);
+            document.getElementById('backsound').play().catch(e => console.log("Music auto-play blocked by browser"));
+            // Trigger AOS refresh supaya animasi tidak macet saat cover hilang
+            setTimeout(() => {
+                AOS.refresh();
+            }, 500);
         }
 
         function toggleMusic() {
             const music = document.getElementById('backsound');
             const icon = document.getElementById('music-icon');
-            if (music.paused) { music.play(); icon.className = 'fas fa-pause'; }
-            else { music.pause(); icon.className = 'fas fa-play'; }
+            if (music.paused) { 
+                music.play(); 
+                icon.className = 'fas fa-pause'; 
+            } else { 
+                music.pause(); 
+                icon.className = 'fas fa-play'; 
+            }
         }
     </script>
 </body>
