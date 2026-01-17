@@ -60,7 +60,7 @@
         }
 
         /* CONTENT */
-        .section { padding: 60px 25px; text-align: center; position: relative; }
+        .section { padding: 80px 25px; text-align: center; position: relative; }
         .photo-container {
             width: 220px; height: 220px; margin: 30px auto;
             border-radius: 20px; overflow: hidden;
@@ -91,16 +91,18 @@
         .countdown-item span { display: block; font-size: 1.5rem; font-weight: bold; color: var(--gold); }
         .countdown-item small { font-size: 0.7rem; text-transform: uppercase; }
 
+        /* MAP BOX FIXED */
         .map-wrapper {
             border-radius: 15px; overflow: hidden; margin: 25px auto;
             border: 2px solid var(--gold); height: 350px; max-width: 600px;
-            background: #eee;
+            background: #f0f0f0;
         }
 
         .btn-map {
             display: inline-block; margin-top: 10px; padding: 12px 30px;
             background-color: var(--dark-green); color: white;
             text-decoration: none; border-radius: 5px; font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         #music-control {
@@ -131,57 +133,69 @@
     </div>
 
     <div id="main">
-        <section class="section" data-aos="fade-up">
-            <div class="arabic" style="font-size: 2.2rem; margin-bottom: 20px;">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
-            <p><i>Assalamu’alaikum Warahmatullahi Wabarakatuh</i></p>
-            <p style="max-width: 600px; margin: 20px auto;">
-                Puji syukur kami panjatkan kehadirat Allah SWT atas segala rahmat-Nya. Dengan memohon ridho-Nya, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara tasyakuran khitan putra kami:
-            </p>
+        <section class="section">
+            <div data-aos="fade-up">
+                <div class="arabic" style="font-size: 2.2rem; margin-bottom: 20px;">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+                <p><i>Assalamu’alaikum Warahmatullahi Wabarakatuh</i></p>
+                <p style="max-width: 600px; margin: 20px auto;">
+                    Puji syukur kami panjatkan kehadirat Allah SWT atas segala rahmat-Nya. Dengan memohon ridho-Nya, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara tasyakuran khitan putra kami:
+                </p>
+            </div>
 
-            <div class="photo-container" data-aos="zoom-in">
+            <div class="photo-container" data-aos="zoom-in" data-aos-delay="200">
                 <img src="foto-athallah.png" alt="Athallah" class="child-photo" onerror="this.src='https://via.placeholder.com/300?text=Athallah'">
             </div>
 
-            <h1 class="script-font">Athallah Kartico Wijaya</h1>
-            <p>Putra dari Bapak <b>Samsul</b> & Ibu <b>Uyung</b></p>
+            <div data-aos="fade-up" data-aos-delay="400">
+                <h1 class="script-font">Athallah Kartico Wijaya</h1>
+                <p>Putra dari Bapak <b>Samsul</b> & Ibu <b>Uyung</b></p>
+            </div>
         </section>
 
-        <section class="section" data-aos="fade-up">
-            <div class="doa-box">
+        <section class="section" style="padding-top: 0;">
+            <div class="doa-box" data-aos="fade-up">
                 <div class="arabic">رَبِّ هَبْ لِي مِنَ الصَّالِحِينَ</div>
                 <p><i>"Ya Tuhanku, anugerahkanlah kepadaku (seorang anak) yang termasuk orang-orang yang shaleh." (QS. Ash-Shaffat: 100)</i></p>
                 <hr style="width: 30%; margin: 20px auto; border: 0.5px solid var(--gold);">
-                <div class="arabic">اَللَّهُمَّ اجْعَلْهُ بَرًّا بِوَالِدَيْهِ وَمُبَارَكًا لِلْإِسْلَامِ</div>
+                <div class="arabic">اَللَّهُمَّ اجْعَلْلهُ بَرًّا بِوَالِدَيْهِ وَمُبَارَكًا لِلْإِسْلَامِ</div>
                 <p><i>"Ya Allah, jadikanlah ia anak yang berbakti kepada kedua orang tuanya dan membawa keberkahan bagi umat Islam."</i></p>
             </div>
         </section>
 
-        <section class="section" style="background: #fbf8f2;" data-aos="fade-up">
-            <h2 class="title">WAKTU & TEMPAT</h2>
-            <div style="margin: 20px 0;">
-                <p>Insya Allah akan dilaksanakan pada:</p>
-                <p style="font-size: 1.3rem; font-weight: bold; color: var(--dark-green);">Jumat, 30 Januari 2026</p>
-                <p>Pukul 16.00 - 20.00 WIB</p>
+        <section class="section" style="background: #fbf8f2;">
+            <div data-aos="fade-down">
+                <h2 class="title">WAKTU & TEMPAT</h2>
+                <div style="margin: 20px 0;">
+                    <p>Insya Allah akan dilaksanakan pada:</p>
+                    <p style="font-size: 1.3rem; font-weight: bold; color: var(--dark-green);">Jumat, 30 Januari 2026</p>
+                    <p>Pukul 16.00 - 20.00 WIB</p>
+                </div>
             </div>
 
-            <div class="countdown-container" id="countdown">
+            <div class="countdown-container" id="countdown" data-aos="zoom-in">
                 <div class="countdown-item"><span id="days">0</span><small>Hari</small></div>
                 <div class="countdown-item"><span id="hours">0</span><small>Jam</small></div>
                 <div class="countdown-item"><span id="minutes">0</span><small>Menit</small></div>
                 <div class="countdown-item"><span id="seconds">0</span><small>Detik</small></div>
             </div>
 
-            <div style="margin-top: 30px;">
+            <div data-aos="fade-up">
                 <p><b>Bertempat di:</b></p>
                 <p style="font-size: 1.1rem; font-weight: bold;">Ballroom Hotel Aston Sidoarjo</p>
                 <p style="font-size: 0.85rem; color: #666;">Jl. Kahuripan Raya No.14, Entalsewu, Sidoarjo</p>
             </div>
 
             <div class="map-wrapper" data-aos="flip-up">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d3956.34212519961!2d112.69165517454922!3d-7.435090173252512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e398632032e3%3A0x8dd56af575404565!2sAston%20Sidoarjo%20City%20Hotel%20%26%20Conference%20Center!5e0!3m2!1sid!2sid!4v1705465000000!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.124578536341!2d112.69348937482862!3d-7.451458892559779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e158632032e3%3A0x8dd46af575404565!2sASTON%20Sidoarjo%20City%20Hotel%20%26%20Conference%20Center!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
             
-            <a href="https://maps.app.goo.gl/3q2qLidGiv69S82D8" target="_blank" class="btn-map">BUKA PETA NAVIGASI</a>
+            <div data-aos="fade-up">
+                <a href="https://maps.app.goo.gl/9uE6jLpS4Y5T9XfW9" target="_blank" class="btn-map">
+                    <i class="fas fa-map-marker-alt"></i> BUKA PETA NAVIGASI
+                </a>
+            </div>
         </section>
 
         <section class="section" data-aos="fade-up">
@@ -189,7 +203,7 @@
             <p style="margin-top: 20px;">Atas kehadiran dan doa restunya kami ucapkan terima kasih.</p>
             <p style="margin-top: 30px;"><i>Wassalamu’alaikum Warahmatullahi Wabarakatuh</i></p>
             
-            <div style="margin-top: 60px;">
+            <div style="margin-top: 60px;" data-aos="zoom-in">
                 <p>Hormat kami,</p>
                 <h2 class="script-font" style="font-size: 2.5rem;">Samsul & Uyung</h2>
                 <p>(Keluarga Besar Athallah Kartico Wijaya)</p>
@@ -203,21 +217,32 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+        // Inisialisasi AOS dengan pengaturan paksa
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true,
+            offset: 120
+        });
 
+        // COUNTDOWN
         const targetDate = new Date("Jan 30, 2026 16:00:00").getTime();
         setInterval(() => {
             const now = new Date().getTime();
             const distance = targetDate - now;
-            document.getElementById("days").innerText = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
-            document.getElementById("hours").innerText = Math.max(0, Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-            document.getElementById("minutes").innerText = Math.max(0, Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
-            document.getElementById("seconds").innerText = Math.max(0, Math.floor((distance % (1000 * 60)) / 1000));
+            if (distance > 0) {
+                document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+                document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+            }
         }, 1000);
 
         function openInvitation() {
             document.getElementById('cover').classList.add('hidden');
             document.getElementById('backsound').play().catch(e => console.log("Music play blocked"));
+            // Refresh AOS saat buka undangan agar animasi langsung jalan
+            setTimeout(() => { AOS.refresh(); }, 600);
         }
 
         function toggleMusic() {
