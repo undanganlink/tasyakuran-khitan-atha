@@ -20,11 +20,11 @@
             font-family: 'Montserrat', sans-serif;
             background-color: var(--cream);
             color: #333;
-            overflow-x: hidden; /* Penting untuk menghindari scroll horizontal */
+            overflow-x: hidden;
             line-height: 1.6;
         }
 
-        /* ORNAMEN POJOK (SVG INLINE) */
+        /* ORNAMEN POJOK */
         .corner {
             position: fixed; width: 80px; height: 80px;
             z-index: 8000; fill: var(--gold); opacity: 0.8;
@@ -50,72 +50,64 @@
             color: white; border: none; border-radius: 50px;
             cursor: pointer; font-weight: bold; margin-top: 30px;
             letter-spacing: 1px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: transform 0.2s;
             animation: pulse 2s infinite;
         }
-        .btn-open:active { transform: scale(0.95); }
 
         @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(197, 160, 89, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
+            0% { transform: scale(1); }
+            70% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
-        /* CONTENT STYLING */
-        .section { padding: 60px 20px; text-align: center; position: relative; overflow: hidden; }
-        
+        /* CONTENT */
+        .section { padding: 60px 20px; text-align: center; position: relative; }
         .photo-container {
             width: 220px; height: 220px; margin: 30px auto;
             border-radius: 20px; overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-            border: 4px solid white;
-            transition: transform 0.3s;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15); border: 4px solid white;
         }
-        .photo-container:hover { transform: scale(1.02); }
         .child-photo { width: 100%; height: 100%; object-fit: cover; }
 
         .doa-box {
             background: white; max-width: 600px; margin: 20px auto;
-            padding: 30px 20px; border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            border: 1px solid #f0e6d2;
+            padding: 30px 20px; border-radius: 15px; border: 1px solid #f0e6d2;
         }
         .arabic {
             font-family: 'Amiri', serif; font-size: 1.8rem;
-            color: var(--dark-green); direction: rtl; margin-bottom: 15px; line-height: 2.2;
+            color: var(--dark-green); direction: rtl; line-height: 2.2;
         }
 
-        .script-font { font-family: 'Great Vibes', cursive; font-size: 3.2rem; color: var(--gold); margin: 10px 0; }
-        h2.title { font-family: 'Cinzel', serif; color: var(--dark-green); letter-spacing: 2px; font-size: 1.5rem; }
+        .script-font { font-family: 'Great Vibes', cursive; font-size: 3.2rem; color: var(--gold); }
+        h2.title { font-family: 'Cinzel', serif; color: var(--dark-green); letter-spacing: 2px; }
+
+        /* COUNTDOWN STYLING */
+        .countdown-container {
+            display: flex; justify-content: center; gap: 10px; margin: 30px 0;
+        }
+        .countdown-item {
+            background: var(--dark-green); color: white;
+            padding: 10px; border-radius: 10px; min-width: 60px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .countdown-item span { display: block; font-size: 1.5rem; font-weight: bold; color: var(--gold); }
+        .countdown-item small { font-size: 0.7rem; text-transform: uppercase; }
 
         .map-wrapper {
-            border-radius: 15px; overflow: hidden;
-            margin-top: 25px; border: 2px solid var(--gold);
-            height: 350px;
-            background: #eee;
+            border-radius: 15px; overflow: hidden; margin-top: 25px;
+            border: 2px solid var(--gold); height: 350px;
         }
 
         .btn-map {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
-            background-color: var(--dark-green);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(6, 68, 32, 0.3);
-            transition: background-color 0.3s;
+            display: inline-block; margin-top: 20px; padding: 12px 30px;
+            background-color: var(--dark-green); color: white;
+            text-decoration: none; border-radius: 5px; font-weight: bold;
         }
-        .btn-map:hover { background-color: #085a2a; }
 
         #music-control {
             position: fixed; bottom: 20px; right: 20px; z-index: 9000;
             background: var(--gold); width: 45px; height: 45px;
             border-radius: 50%; display: flex; justify-content: center;
             align-items: center; color: white; cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
     </style>
 </head>
@@ -131,132 +123,83 @@
 
     <div id="cover">
         <div data-aos="zoom-in" data-aos-duration="1500">
-            <h3 style="letter-spacing: 4px; font-weight: 300; font-size: 1rem;">UNDANGAN TASYAKURAN KHITAN</h3>
+            <h3 style="letter-spacing: 4px; font-weight: 300;">UNDANGAN TASYAKURAN KHITAN</h3>
             <h1 class="script-font" style="font-size: 3.5rem; color: #fff;">Athallah Kartico Wijaya</h1>
-            <p style="margin-top: 20px;">Kepada Bapak/Ibu/Saudara/i</p>
             <button class="btn-open" onclick="openInvitation()">BUKA UNDANGAN</button>
         </div>
     </div>
 
     <div id="main">
         <section class="section" data-aos="fade-up">
-            <div class="arabic" style="font-size: 2rem; margin-bottom: 10px;">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+            <div class="arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
             <p><i>Assalamu’alaikum Warahmatullahi Wabarakatuh</i></p>
-            <p style="max-width: 600px; margin: 20px auto;">
-                Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara tasyakuran khitan putra kami:
-            </p>
-
-            <div class="photo-container" data-aos="zoom-in" data-aos-delay="200">
-                <img src="foto-athallah.png" alt="Athallah Kartico Wijaya" class="child-photo" onerror="this.src='https://via.placeholder.com/300?text=FOTO+ATHALLAH'">
+            <div class="photo-container" data-aos="zoom-in">
+                <img src="foto-athallah.png" alt="Athallah" class="child-photo" onerror="this.src='https://via.placeholder.com/300'">
             </div>
-
-            <h1 class="script-font" data-aos="fade-up" data-aos-delay="300">Athallah Kartico Wijaya</h1>
-            <p data-aos="fade-up" data-aos-delay="400">Putra dari Bapak <b>Itong</b> & Ibu <b>Uyung</b></p>
+            <h1 class="script-font">Athallah Kartico Wijaya</h1>
+            <p>Putra dari Bapak <b>Itong</b> & Ibu <b>Uyung</b></p>
         </section>
 
-        <section class="section" style="padding-top: 0;" data-aos="fade-up">
+        <section class="section" data-aos="fade-up">
             <div class="doa-box">
                 <div class="arabic">رَبِّ هَبْ لِي مِنَ الصَّالِحِينَ</div>
-                <p style="font-size: 0.9rem;"><i>"Ya Tuhanku, anugerahkanlah kepadaku (seorang anak) yang termasuk orang-orang yang shaleh." (QS. Ash-Shaffat: 100)</i></p>
-                <hr style="width: 30%; margin: 20px auto; border: 0.5px solid var(--gold);">
-                <div class="arabic">اَللَّهُمَّ اجْعَلْهُ بَرًّا بِوَالِدَيْهِ وَمُبَارَكًا لِلْإِسْلَامِ</div>
-                <p style="font-size: 0.9rem;"><i>"Ya Allah, jadikanlah ia anak yang berbakti kepada kedua orang tuanya dan membawa keberkahan bagi umat Islam."</i></p>
+                <p><i>"Ya Tuhanku, anugerahkanlah kepadaku (seorang anak) yang termasuk orang-orang yang shaleh." (QS. Ash-Shaffat: 100)</i></p>
             </div>
         </section>
 
         <section class="section" style="background: #fbf8f2;" data-aos="fade-up">
-            <div style="max-width: 600px; margin: 0 auto;">
-                <h2 class="title" data-aos="fade-down">WAKTU & TEMPAT</h2>
-                
-                <div style="margin: 30px 0;" data-aos="zoom-in">
-                    <p>Insya Allah akan dilaksanakan pada:</p>
-                    <p style="font-size: 1.3rem; font-weight: bold; margin: 10px 0; color: var(--dark-green);">Jumat, 30 Januari 2026</p>
-                    <p><i class="far fa-clock"></i> Pukul 16.00 - 20.00 WIB</p>
-                </div>
+            <h2 class="title">WAKTU & TEMPAT</h2>
+            <p style="font-size: 1.2rem; font-weight: bold; margin: 10px 0;">Jumat, 30 Januari 2026</p>
+            <p>Pukul 16.00 - 20.00 WIB</p>
 
-                <div style="margin: 30px 0;" data-aos="zoom-in" data-aos-delay="100">
-                    <p><b>Bertempat di:</b></p>
-                    <p style="font-size: 1.1rem; font-weight: bold;">Ballroom Hotel Aston Sidoarjo</p>
-                    <p style="font-size: 0.9rem; color: #666;">Jl. Kahuripan Raya No.14, Entalsewu, Sidoarjo</p>
-                </div>
-
-                <div class="map-wrapper" data-aos="flip-up">
-                    <iframe 
-                        width="100%" 
-                        height="100%" 
-                        frameborder="0" 
-                        scrolling="no" 
-                        marginheight="0" 
-                        marginwidth="0" 
-                        src="https://maps.google.com/maps?q=Aston+Sidoarjo+City+Hotel+Conference+Center&t=&z=15&ie=UTF8&iwloc=&output=embed">
-                    </iframe>
-                </div>
-
-                <a href="https://maps.app.goo.gl/3w6Zt5qgE3qgE3qg" target="_blank" class="btn-map" data-aos="fade-up">
-                    <i class="fas fa-map-marked-alt"></i> BUKA GOOGLE MAPS
-                </a>
+            <div class="countdown-container" id="countdown">
+                <div class="countdown-item"><span id="days">0</span><small>Hari</small></div>
+                <div class="countdown-item"><span id="hours">0</span><small>Jam</small></div>
+                <div class="countdown-item"><span id="minutes">0</span><small>Menit</small></div>
+                <div class="countdown-item"><span id="seconds">0</span><small>Detik</small></div>
             </div>
+
+            <p><b>Ballroom Hotel Aston Sidoarjo</b></p>
+            <p style="font-size: 0.8rem;">Jl. Kahuripan Raya No.14, Entalsewu, Sidoarjo</p>
+
+            <div class="map-wrapper" data-aos="flip-up">
+                <iframe width="100%" height="100%" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m12!1m12!1m3!1d3956.405523091913!2d112.6942301!3d-7.4349816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e398632032e3%3A0x8dd46af575404565!2sAston%20Sidoarjo%20City%20Hotel%20%26%20Conference%20Center!5e0!3m2!1sid!2sid!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <a href="https://maps.app.goo.gl/YourActualShortLinkHere" target="_blank" class="btn-map">BUKA GOOGLE MAPS</a>
         </section>
 
-        <section class="section" data-aos="fade-up">
-            <div style="max-width: 600px; margin: 0 auto;">
-                <p>
-                    Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada putra kami.
-                </p>
-                <p style="margin-top: 20px;">
-                    Atas kehadiran dan doa restunya kami ucapkan terima kasih.
-                </p>
-                <p style="margin-top: 30px;"><i>Wassalamu’alaikum Warahmatullahi Wabarakatuh</i></p>
-                
-                <div style="margin-top: 50px;">
-                    <p>Hormat kami,</p>
-                    <h2 class="script-font" style="font-size: 2.5rem;">Itong & Uyung</h2>
-                </div>
-            </div>
-        </section>
-
-        <footer style="padding: 20px; text-align: center; font-size: 0.8rem; background: var(--dark-green); color: white;">
-            <p>© 2026 Tasyakuran Khitan Athallah Kartico Wijaya. Created with Love.</p>
+        <footer class="section">
+            <p>Hormat kami,</p>
+            <h2 class="script-font">Itong & Uyung</h2>
+            <p style="font-size: 0.7rem; margin-top: 50px;">© 2026 Tasyakuran Khitan Athallah Kartico Wijaya</p>
         </footer>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Inisialisasi Animasi Scroll
-        AOS.init({
-            duration: 1000, // Durasi animasi 1 detik
-            once: false,    // Animasi bisa berulang jika di-scroll naik turun
-            offset: 100     // Jarak trigger animasi
-        });
-        
-        const music = document.getElementById('backsound');
-        const icon = document.getElementById('music-icon');
-        let isPlaying = false;
+        AOS.init({ duration: 1000, once: true });
+
+        // COUNTDOWN LOGIC
+        const targetDate = new Date("Jan 30, 2026 16:00:00").getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
 
         function openInvitation() {
             document.getElementById('cover').classList.add('hidden');
-            playMusic();
-        }
-
-        function playMusic() {
-            music.play().then(() => {
-                isPlaying = true;
-                icon.className = 'fas fa-pause';
-            }).catch(error => {
-                console.log("Autoplay dicegah oleh browser.");
-            });
+            document.getElementById('backsound').play();
         }
 
         function toggleMusic() {
-            if (isPlaying) {
-                music.pause();
-                icon.className = 'fas fa-play';
-                isPlaying = false;
-            } else {
-                music.play();
-                icon.className = 'fas fa-pause';
-                isPlaying = true;
-            }
+            const music = document.getElementById('backsound');
+            const icon = document.getElementById('music-icon');
+            if (music.paused) { music.play(); icon.className = 'fas fa-pause'; }
+            else { music.pause(); icon.className = 'fas fa-play'; }
         }
     </script>
 </body>
